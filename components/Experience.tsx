@@ -113,7 +113,7 @@ export default function Experience() {
                       }}
                       transition={{
                         ease: "easeInOut",
-                        duration: 0.3,
+                        duration: 0.4,
                       }}
                       className="group flex items-center h-6 w-6 border border-neutral-300 overflow-hidden bg-neutral-100 z-10 hover:z-50 px-1 rounded-full cursor-pointer "
                     >

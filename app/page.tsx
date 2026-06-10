@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Socials from "@/components/Socials";
 import Techstack from "@/components/Techstack";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Techstack />
         <Projects />
         <Experience />
+        <Testimonials />
       </Container>
     </div>
   );
