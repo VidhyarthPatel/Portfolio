@@ -103,22 +103,22 @@ function Testimonials() {
   }, [row2Animate, row2Scope]);
 
   const Card = ({ item }: { item: Testimonial }) => (
-    <div className="w-[320px] shrink-0 mr-4 bg-neutral-50 border border-neutral-200/80 rounded-2xl p-5 flex flex-col justify-between hover:border-neutral-300 hover:shadow-2xs transition-all duration-200 select-none cursor-default">
-      <p className="text-neutral-800 font-serif text-[14px] leading-relaxed mb-5 font-normal whitespace-normal">
+    <div className="w-[320px] shrink-0 mr-4 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800 rounded-2xl p-5 flex flex-col justify-between hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-2xs transition-all duration-200 select-none cursor-default">
+      <p className="text-neutral-800 dark:text-neutral-200 font-serif text-[14px] leading-relaxed mb-5 font-normal whitespace-normal">
         {item.text}
       </p>
       <div className="flex items-center gap-3">
         <img
           src={item.avatar}
           alt={item.name}
-          className="w-10 h-10 rounded-full object-cover shrink-0 border border-neutral-100"
+          className="w-10 h-10 rounded-full object-cover shrink-0 border border-neutral-100 dark:border-neutral-800"
           referrerPolicy="no-referrer"
         />
         <div className="flex flex-col min-w-0">
-          <span className="text-xs font-semibold text-neutral-900 leading-tight truncate">
+          <span className="text-xs font-semibold text-neutral-900 dark:text-white leading-tight truncate">
             {item.name}
           </span>
-          <span className="text-[10px] text-neutral-500 leading-tight truncate mt-0.5 font-sans">
+          <span className="text-[10px] text-neutral-500 dark:text-neutral-400 leading-tight truncate mt-0.5 font-sans">
             {item.role}
           </span>
         </div>
@@ -128,7 +128,7 @@ function Testimonials() {
 
   return (
     <section className="p-5 relative overflow-hidden">
-      <h2 className="mb-8 text-xl font-semibold text-neutral-900 font-sans">
+      <h2 className="mb-8 text-xl font-semibold text-neutral-900 dark:text-white font-sans">
         What People Say About Me
       </h2>
 

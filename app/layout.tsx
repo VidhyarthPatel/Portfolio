@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Container from "@/components/container";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,13 +21,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#FAFAFA]">
-        <Container className="border-x border-neutral-200 px-5">
-          <Navbar />
-        </Container>
-        {children}
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var savedTheme = localStorage.getItem('theme');
+                  var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })()
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-[#FAFAFA] dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+        <ThemeProvider>
+          <Container className="border-x border-neutral-200 dark:border-neutral-800 px-5">
+            <Navbar />
+          </Container>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
 }
+

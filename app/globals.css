@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-inter), sans-serif;
   --spacing-200: 50rem;
@@ -11,7 +13,19 @@ html {
   background-color: #fafafa;
 }
 
+html.dark {
+  background-color: #171717; /* neutral-900 */
+}
+
+
 .marquee-mask {
   mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
 }
+
+.disable-transitions,
+.disable-transitions * {
+  transition: none !important;
+  animation: none !important;
+}
+

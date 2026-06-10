@@ -9,8 +9,8 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
-    <div className="bg-[#FAFAFA] min-h-screen">
-      <Container className="border-x border-neutral-200 min-h-screen divide-y divide-neutral-200">
+    <div className="bg-[#FAFAFA] dark:bg-neutral-900 min-h-screen">
+      <Container className="border-x border-neutral-200 dark:border-neutral-800 min-h-screen divide-y divide-neutral-200 dark:divide-neutral-800">
         <Hero />
         <Socials />
         <Techstack />

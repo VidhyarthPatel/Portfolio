@@ -78,21 +78,21 @@ const experiences: ExperienceItem[] = [
 export default function Experience() {
   return (
     <section className="p-5">
-      <h2 className="mb-8 text-xl font-semibold">Where I've Worked</h2>
+      <h2 className="mb-8 text-xl font-semibold text-neutral-900 dark:text-white">Where I've Worked</h2>
 
       <div className="flex flex-col gap-10">
         {experiences.map((exp, index) => (
           <div key={index} className="flex items-start justify-between gap-6">
             {/* Content */}
             <div className="flex-1">
-              <h3 className="text-xl font-semibold">{exp.company}</h3>
+              <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">{exp.company}</h3>
 
               <div className="mt-1.5 flex flex-wrap items-baseline gap-2">
-                <span className="text-sm font-medium">{exp.role}</span>
-                <span className="text-sm text-neutral-500">{exp.period}</span>
+                <span className="text-sm font-medium text-neutral-900 dark:text-neutral-200">{exp.role}</span>
+                <span className="text-sm text-neutral-500 dark:text-neutral-400">{exp.period}</span>
               </div>
 
-              <p className="mt-3 max-w-[620px] text-sm leading-relaxed text-neutral-600">
+              <p className="mt-3 max-w-[620px] text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
                 {exp.description}
               </p>
 
@@ -115,16 +115,16 @@ export default function Experience() {
                         ease: "easeInOut",
                         duration: 0.4,
                       }}
-                      className="group flex items-center h-6 w-6 border border-neutral-300 overflow-hidden bg-neutral-100 z-10 hover:z-50 px-1 rounded-full cursor-pointer "
+                      className="group flex items-center h-6 w-6 border border-neutral-300 dark:border-neutral-700 overflow-hidden bg-neutral-100 dark:bg-neutral-800 z-10 hover:z-50 px-1 rounded-full cursor-pointer"
                     >
                       <div className="size-3.75 shrink-0 flex items-center justify-center">
                         <Icon
-                          className="h-full w-full"
-                          style={{ color: tech.color }}
+                          className={`h-full w-full ${tech.color === "#000000" ? "text-neutral-950 dark:text-neutral-50 fill-current" : ""}`}
+                          style={{ color: tech.color === "#000000" ? undefined : tech.color }}
                         />
                       </div>
 
-                      <p className="text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 ml-2 transition-all duration-300 font-medium text-neutral-700">
+                      <p className="text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 ml-2 transition-all duration-300 font-medium text-neutral-700 dark:text-neutral-300">
                         {tech.name}
                       </p>
                     </motion.div>

@@ -49,19 +49,22 @@ const techStack: TechItem[] = [
 
 function TechStack() {
   return (
-    <div className="py-6 px-6 bg-[#FAFAFA] backdrop-blur-xs">
+    <div className="py-6 px-6 bg-[#FAFAFA] dark:bg-neutral-900 backdrop-blur-xs">
       <div className="flex flex-wrap gap-2">
         {techStack.map((tech, index) => {
           const Icon = tech.icon;
           return (
             <div
               key={index}
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-neutral-200 bg-white/70 hover:bg-white hover:border-neutral-300 hover:shadow-3xs transition-all duration-200 cursor-default select-none group"
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-800/70 hover:bg-white dark:hover:bg-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-3xs transition-all duration-200 cursor-default select-none group"
             >
               <div className="flex items-center justify-center w-3.5 h-3.5 shrink-0">
-                <Icon className="w-full h-full" style={{ color: tech.color }} />
+                <Icon
+                  className={`w-full h-full ${tech.color === "#000000" ? "text-neutral-950 dark:text-neutral-50 fill-current" : ""}`}
+                  style={{ color: tech.color === "#000000" ? undefined : tech.color }}
+                />
               </div>
-              <span className="text-xs font-sans font-normal tracking-tight text-neutral-600 group-hover:text-neutral-900 transition-colors">
+              <span className="text-xs font-sans font-normal tracking-tight text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors">
                 {tech.name}
               </span>
             </div>

@@ -85,10 +85,10 @@ function Socials() {
       rel="noopener noreferrer"
       className="group flex items-center gap-1 hover:translate-x-0.5 transition-transform duration-200"
     >
-      <div className="flex items-center justify-center w-8 h-8 rounded-lg border border-neutral-200 bg-neutral-100 shadow-3xs group-hover:border-neutral-300 group-hover:bg-white transition-colors">
+      <div className="flex items-center justify-center w-8 h-8 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-800 shadow-3xs group-hover:border-neutral-300 dark:group-hover:border-neutral-700 group-hover:bg-white dark:group-hover:bg-neutral-750 transition-colors">
         {item.icon}
       </div>
-      <span className="text-sm font-mono tracking-tight text-neutral-700 group-hover:text-neutral-950 group-hover:underline decoration-neutral-300 underline-offset-4 transition-colors">
+      <span className="text-sm font-mono tracking-tight text-neutral-700 dark:text-neutral-300 group-hover:text-neutral-950 dark:group-hover:text-white group-hover:underline decoration-neutral-300 dark:decoration-neutral-700 underline-offset-4 transition-colors">
         {item.value}
       </span>
     </a>
@@ -102,7 +102,7 @@ function Socials() {
       </div>
 
       {/* Right Column */}
-      <div className="flex flex-col mt-5 gap-1 pl-8 border-l border-dashed border-neutral-200">
+      <div className="flex flex-col mt-5 gap-1 pl-8 border-l border-dashed border-neutral-200 dark:border-neutral-800">
         {rightColumn.map(renderItem)}
       </div>
     </div>

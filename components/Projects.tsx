@@ -140,9 +140,9 @@ function Projects() {
               </div>
 
               <div className="">
-                <h2 className="text-neutral-600 py-5">{project.title}</h2>
+                <h2 className="text-neutral-600 dark:text-neutral-300 py-5">{project.title}</h2>
 
-                <p className="text-gray-500 text-sm w-55">
+                <p className="text-gray-500 dark:text-neutral-400 text-sm w-55">
                   {project.description}
                 </p>
 
@@ -160,13 +160,13 @@ function Projects() {
                         ease: "easeInOut",
                         duration: 0.3,
                       }}
-                      className="group flex items-center h-6 w-6 border border-neutral-300 overflow-hidden bg-neutral-100 z-10 hover:z-50 px-1 rounded-full"
+                      className="group flex items-center h-6 w-6 border border-neutral-300 dark:border-neutral-700 overflow-hidden bg-neutral-100 dark:bg-neutral-800 z-10 hover:z-50 px-1 rounded-full cursor-pointer"
                       key={index}
                     >
-                      <div className="size-3.75 shrink-0">
+                      <div className="size-3.75 shrink-0 text-neutral-900 dark:text-neutral-100 fill-current">
                         <Icon.icon />
                       </div>
-                      <p className="text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 ml-2 transition-all duration-300">
+                      <p className="text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 ml-2 transition-all duration-300 text-neutral-700 dark:text-neutral-300 font-medium">
                         {Icon.name}
                       </p>
                     </motion.div>
