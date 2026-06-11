@@ -122,27 +122,27 @@ function Projects() {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="flex gap-4 mt-3"
+          className="flex flex-col sm:flex-row gap-8 sm:gap-4 mt-3"
         >
           {projectsLinks.map((project, index) => (
             <motion.div
               key={index}
-              className="cursor-pointer"
+              className="cursor-pointer w-full sm:w-auto"
               variants={item}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <div>
+              <div className="w-full">
                 <img
                   src={project.src}
                   alt={project.title}
-                  className="aspect-auto h-45 rounded-xl"
+                  className="w-full sm:w-auto object-cover h-48 sm:h-45 rounded-xl"
                 />
               </div>
 
               <div className="">
-                <h2 className="text-neutral-600 dark:text-neutral-300 py-5">{project.title}</h2>
+                <h2 className="text-neutral-600 dark:text-neutral-300 py-3 sm:py-5">{project.title}</h2>
 
-                <p className="text-gray-500 dark:text-neutral-400 text-sm w-55">
+                <p className="text-gray-500 dark:text-neutral-400 text-sm w-full sm:w-55">
                   {project.description}
                 </p>
 
