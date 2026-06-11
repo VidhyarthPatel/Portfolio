@@ -34,7 +34,7 @@ export default function BlogPage() {
           <div className="flex flex-col gap-4">
             {blogs.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
-                <article className="group relative rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 p-5 sm:p-6 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md dark:hover:shadow-neutral-900/50 transition-all duration-300">
+                <article className="group relative rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 p-5 sm:p-6 transition-all duration-300">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
                     <div className="flex-1 min-w-0">
                       <h2 className="text-lg sm:text-xl font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-700 dark:group-hover:text-white transition-colors leading-snug">

@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       "Freelance Full Stack Developer available for hire. I build modern web apps with React, Next.js, Node.js, Express.js, MongoDB & PostgreSQL. Check out my portfolio and let's work together.",
     images: [
       {
-        url: "/profileImg.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Vidhyarth Patel – Freelance Full Stack Developer",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     title: "Vidhyarth Patel | Freelance Full Stack Developer",
     description:
       "Freelance Full Stack Developer specializing in React, Next.js, Node.js, Express.js, MongoDB & PostgreSQL. Available for hire.",
-    images: ["/profileImg.png"],
+    images: ["/og-image.png"],
     creator: "@vidhyarth",
   },
   category: "technology",
