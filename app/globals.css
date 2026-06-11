@@ -11,6 +11,7 @@
 
 html {
   background-color: #fafafa;
+  scroll-behavior: smooth;
 }
 
 html.dark {

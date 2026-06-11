@@ -7,22 +7,22 @@ function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="w-full py-5">
+    <nav className="w-full py-3.5 sm:py-5">
       <div className="flex items-center justify-between">
         {/* Left Side: Navigation Links */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 sm:gap-6">
           <Link
             href="/"
             className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm font-medium transition-colors"
           >
             Home
           </Link>
-          <Link
-            href="/work"
+          <a
+            href="#work"
             className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm font-medium transition-colors"
           >
             Work
-          </Link>
+          </a>
           <Link
             href="/blog"
             className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm font-medium transition-colors"
@@ -38,9 +38,9 @@ function Navbar() {
         </div>
 
         {/* Right Side: Search and Theme Toggle */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           {/* Search bar UI (Command + K) */}
-          <div className="flex items-center gap-3 rounded-full pl-3 pr-2 py-1.5 transition-colors cursor-pointer text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 border border-transparent hover:border-neutral-200/50 dark:hover:border-neutral-700/50">
+          <div className="hidden sm:flex items-center gap-3 rounded-full pl-3 pr-2 py-1.5 transition-colors cursor-pointer text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-800 border border-transparent hover:border-neutral-200/50 dark:hover:border-neutral-700/50">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

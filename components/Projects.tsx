@@ -35,7 +35,7 @@ function Projects() {
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },
-        { icon: TailwindIcon, name: "tailwind CSS" },
+        { icon: TailwindIcon, name: "Tailwind CSS" },
       ],
     },
     {
@@ -46,7 +46,7 @@ function Projects() {
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },
-        { icon: TailwindIcon, name: "tailwind CSS" },
+        { icon: TailwindIcon, name: "Tailwind CSS" },
       ],
     },
     {
@@ -57,7 +57,7 @@ function Projects() {
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },
-        { icon: TailwindIcon, name: "tailwind CSS" },
+        { icon: TailwindIcon, name: "Tailwind CSS" },
       ],
     },
   ];
@@ -87,7 +87,7 @@ function Projects() {
 
   return (
     <Container>
-      <div className="p-5">
+      <div id="work" className="p-5 scroll-mt-16">
         <motion.div
           className="relative inline-block text-xl font-semibold"
           variants={container}
@@ -140,7 +140,9 @@ function Projects() {
               </div>
 
               <div className="">
-                <h2 className="text-neutral-600 dark:text-neutral-300 py-3 sm:py-5">{project.title}</h2>
+                <h2 className="text-neutral-600 dark:text-neutral-300 py-3 sm:py-5">
+                  {project.title}
+                </h2>
 
                 <p className="text-gray-500 dark:text-neutral-400 text-sm w-full sm:w-55">
                   {project.description}

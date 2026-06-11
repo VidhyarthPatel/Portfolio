@@ -15,7 +15,7 @@ function Socials() {
     {
       name: "GitHub",
       value: "GitHub",
-      href: "https://github.com/vidhyarth",
+      href: "https://github.com/VidhyarthPatel",
       icon: <HugeiconsIcon icon={GithubIcon} size={18} />,
     },
     {
