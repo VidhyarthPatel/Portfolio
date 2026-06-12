@@ -17,12 +17,12 @@ function Navbar() {
           >
             Home
           </Link>
-          <a
-            href="#work"
+          <Link
+            href="/#work"
             className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm font-medium transition-colors"
           >
             Work
-          </a>
+          </Link>
           <Link
             href="/blog"
             className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm font-medium transition-colors"

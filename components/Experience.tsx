@@ -76,13 +76,76 @@ const experiences: ExperienceItem[] = [
 ];
 
 export default function Experience() {
+  const word = "Where I've Worked".split(" ");
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const item = {
+    hidden: {
+      opacity: 0,
+      y: 10,
+      filter: "blur(10px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+    },
+  };
+
   return (
     <section className="p-5">
-      <h2 className="mb-8 text-xl font-semibold text-neutral-900 dark:text-white">Where I've Worked</h2>
+      <motion.div
+        className="mb-8 relative inline-block text-xl font-semibold text-neutral-900 dark:text-white"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <motion.div
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.05,
+              },
+            },
+          }}
+          className="flex gap-1"
+        >
+          {word.map((w, index) => (
+            <motion.span
+              key={index}
+              variants={item}
+              transition={{ duration: 0.1 }}
+              className="whitespace-pre"
+            >
+              {w}
+            </motion.span>
+          ))}
+        </motion.div>
+      </motion.div>
 
-      <div className="flex flex-col gap-10">
+      <motion.div 
+        className="flex flex-col gap-10"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+      >
         {experiences.map((exp, index) => (
-          <div key={index} className="flex items-start justify-between gap-6">
+          <motion.div 
+            key={index} 
+            className="flex items-start justify-between gap-6"
+            variants={item}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
             {/* Content */}
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">{exp.company}</h3>
@@ -144,9 +207,9 @@ export default function Experience() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

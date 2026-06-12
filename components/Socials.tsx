@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "motion/react";
 import {
   Call02Icon,
   GithubIcon,
@@ -74,7 +77,11 @@ function Socials() {
   }
 
   const renderItem = (item: SocialItem, index: number) => (
-    <a
+    <motion.a
+      variants={{
+        hidden: { filter: "blur(10px)", x: -10, opacity: 0 },
+        show: { filter: "blur(0px)", x: 0, opacity: 1, transition: { duration: 0.3 } },
+      }}
       key={index}
       href={item.href}
       target={
@@ -85,17 +92,30 @@ function Socials() {
       rel="noopener noreferrer"
       className="group flex items-center gap-1 hover:translate-x-0.5 transition-transform duration-200"
     >
-      <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-800 shadow-3xs group-hover:border-neutral-300 dark:group-hover:border-neutral-700 group-hover:bg-white dark:group-hover:bg-neutral-750 transition-colors flex-shrink-0">
+      <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-800 shadow-3xs group-hover:border-neutral-300 dark:group-hover:border-neutral-700 group-hover:bg-white dark:group-hover:bg-neutral-700 transition-colors flex-shrink-0">
         {item.icon}
       </div>
       <span className="text-[11px] min-[360px]:text-xs sm:text-sm font-mono tracking-tighter sm:tracking-tight text-neutral-700 dark:text-neutral-300 group-hover:text-neutral-950 dark:group-hover:text-white group-hover:underline decoration-neutral-300 dark:decoration-neutral-700 underline-offset-4 transition-colors truncate">
         {item.value}
       </span>
-    </a>
+    </motion.a>
   );
 
   return (
-    <div className="grid grid-cols-2 p-4 sm:p-5 backdrop-blur-xs gap-0">
+    <motion.div 
+      className="grid grid-cols-2 p-4 sm:p-5 backdrop-blur-xs gap-0"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-50px" }}
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.1,
+          },
+        },
+      }}
+    >
       {/* Left Column */}
       <div className="flex flex-col gap-2 sm:gap-1 pr-1 sm:pr-6">
         {leftColumn.map(renderItem)}
@@ -105,7 +125,7 @@ function Socials() {
       <div className="flex flex-col gap-2 sm:gap-1 pl-3 sm:pl-8 border-l border-dashed border-neutral-200 dark:border-neutral-800 mt-0 sm:mt-5">
         {rightColumn.map(renderItem)}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

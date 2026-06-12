@@ -6,6 +6,8 @@ import Projects from "@/components/Projects";
 import Socials from "@/components/Socials";
 import Techstack from "@/components/Techstack";
 import Testimonials from "@/components/Testimonials";
+import BookCall from "@/components/BookCall";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +19,7 @@ export default function Home() {
         <Projects />
         <Experience />
         <Testimonials />
+        <BookCall />
       </Container>
     </div>
   );

@@ -66,6 +66,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     if (!theme) return;
     const newTheme: Theme = theme === "light" ? "dark" : "light";
+    
+    const audio = new Audio("/toggle sound.mp3");
+    audio.play().catch((e) => console.log("Audio play error:", e));
+
     setTheme(newTheme);
   };
 

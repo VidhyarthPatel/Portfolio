@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Container from "@/components/container";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,7 +15,8 @@ const inter = Inter({
 const siteUrl = "https://vidhyarth.me";
 
 export const metadata: Metadata = {
-  title: "Vidhyarth Patel | Freelance Full Stack Developer – React, Next.js, Node.js",
+  title:
+    "Vidhyarth Patel | Freelance Full Stack Developer – React, Next.js, Node.js",
   description:
     "Freelance Full Stack Developer specializing in React, Next.js, Node.js, Express.js, MongoDB and PostgreSQL. Hire me to build modern, high-performance web applications. Explore my projects, technical skills, and experience.",
   keywords: [
@@ -61,7 +64,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Vidhyarth Patel – Freelance Developer",
-    title: "Vidhyarth Patel | Freelance Full Stack Developer – React, Next.js, Node.js",
+    title:
+      "Vidhyarth Patel | Freelance Full Stack Developer – React, Next.js, Node.js",
     description:
       "Freelance Full Stack Developer available for hire. I build modern web apps with React, Next.js, Node.js, Express.js, MongoDB & PostgreSQL. Check out my portfolio and let's work together.",
     images: [
@@ -138,13 +142,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <script
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -164,10 +174,14 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-[#FAFAFA] dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
         <ThemeProvider>
+          <ScrollToTop />
           <Container className="sticky top-0 z-50 border-x border-b border-neutral-200 dark:border-neutral-800 px-5 bg-[#FAFAFA]/80 dark:bg-neutral-900/80 backdrop-blur-md">
             <Navbar />
           </Container>
           {children}
+          <Container className="border-x border-b border-t border-neutral-200 dark:border-neutral-800">
+            <Footer />
+          </Container>
         </ThemeProvider>
       </body>
     </html>

@@ -47,13 +47,36 @@ function Hero() {
   };
 
   return (
-    <div className="grid grid-cols-[auto_1fr] sm:grid-cols-[1fr_auto] gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-0 p-5">
+    <motion.div
+      className="grid grid-cols-[auto_1fr] sm:grid-cols-[1fr_auto] gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-0 p-5"
+      initial="hidden"
+      animate="show"
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.15,
+          },
+        },
+      }}
+    >
       {/* Name and Badge (Header) */}
       <div className="col-start-2 row-start-1 sm:col-start-1 sm:row-start-1 flex flex-col justify-center">
         <div className="flex flex-col sm:flex-row sm:items-center">
-          <h1 className="text-3xl sm:text-4xl font-bold mt-1 sm:mt-5 text-shadow-[0_9px_20px_rgba(0,0,0,0.41)]">
+          <motion.h1
+            variants={{
+              hidden: { filter: "blur(10px)", x: -10, opacity: 0 },
+              show: {
+                filter: "blur(0px)",
+                x: 0,
+                opacity: 1,
+                transition: { duration: 0.3 },
+              },
+            }}
+            className="text-3xl sm:text-4xl font-bold mt-1 sm:mt-5 text-shadow-[0_9px_20px_rgba(0,0,0,0.41)]"
+          >
             Vidhyarth Patel
-          </h1>
+          </motion.h1>
           <div className="relative h-6 overflow-hidden mt-1.5 sm:mt-6 sm:ml-5 rounded-md border border-neutral-300 dark:border-neutral-700 px-2 w-fit">
             <AnimatePresence mode="wait">
               <motion.div
@@ -88,7 +111,18 @@ function Hero() {
       </div>
 
       {/* Description Paragraph */}
-      <p className="col-span-2 sm:col-span-1 sm:col-start-1 sm:row-start-2 text-md text-neutral-500 dark:text-neutral-400 font-medium w-full sm:w-145 mt-2 sm:mt-5">
+      <motion.p
+        variants={{
+          hidden: { filter: "blur(10px)", x: -10, opacity: 0 },
+          show: {
+            filter: "blur(0px)",
+            x: 0,
+            opacity: 1,
+            transition: { duration: 0.3 },
+          },
+        }}
+        className="col-span-2 sm:col-span-1 sm:col-start-1 sm:row-start-2 text-md text-neutral-500 dark:text-neutral-400 font-medium w-full sm:w-145 mt-2 sm:mt-5"
+      >
         I build modern web experiences end-to-end with{" "}
         <span className="text-black dark:text-white font-bold">React,</span>{" "}
         <span className="text-black dark:text-white font-bold">Next.js,</span>{" "}
@@ -97,7 +131,7 @@ function Hero() {
         <span className="text-black dark:text-white font-bold">MongoDB. </span>{" "}
         Whether it's crafting smooth user interfaces or developing reliable
         backend systems, I enjoy bringing ideas to life through code.
-      </p>
+      </motion.p>
 
       {/* Profile Video */}
       <div className="col-start-1 row-start-1 sm:col-start-2 sm:row-start-1 sm:row-span-2 flex-shrink-0 flex items-center justify-start sm:justify-end">
@@ -112,7 +146,7 @@ function Hero() {
           onEnded={handleEnded}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

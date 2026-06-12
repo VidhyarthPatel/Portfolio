@@ -1,11 +1,15 @@
 "use client";
 
 import Container from "./container";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
 import BananaTypingImg from "@/public/BananaTyping.png";
 import TechDefendersImg from "@/public/TechDefender'sLanding page.png";
+import { GithubIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 function Projects() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const ReactIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
       <g fill="#61DAFB">
@@ -34,6 +38,8 @@ function Projects() {
       description:
         "Typing test website built with React, framer motion, and Tailwind CSS",
       src: BananaTypingImg,
+      demoLink: "#",
+      githubLink: "#",
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },
@@ -45,6 +51,8 @@ function Projects() {
       description:
         "An interactive feedback system that provides instant responses to user actions",
       src: TechDefendersImg,
+      demoLink: "#",
+      githubLink: "#",
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },
@@ -56,6 +64,8 @@ function Projects() {
       description:
         "A clone of Apple's website that showcases their products and services",
       src: TechDefendersImg,
+      demoLink: "#",
+      githubLink: "#",
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },
@@ -124,62 +134,102 @@ function Projects() {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="flex flex-col sm:flex-row gap-8 sm:gap-4 mt-3"
+          className="flex flex-col justify-center sm:flex-row gap-8 sm:gap-0 mt-3 relative z-0"
+          onMouseLeave={() => setHoveredIndex(null)}
         >
           {projectsLinks.map((project, index) => (
-            <motion.div
+            <motion.a
               key={index}
-              className="cursor-pointer w-full sm:w-auto"
+              href={project.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer w-full sm:w-auto block relative p-5 rounded-xl"
               variants={item}
               transition={{ duration: 0.3, ease: "easeInOut" }}
+              onMouseEnter={() => setHoveredIndex(index)}
             >
-              <div className="w-full">
-                <img
-                  src={project.src.src}
-                  alt={project.title}
-                  className="w-full sm:w-auto object-cover h-48 sm:h-36 rounded-xl"
-                  width={500}
-                  height={300}
-                />
-              </div>
+              <AnimatePresence>
+                {hoveredIndex === index && (
+                  <motion.span
+                    className="absolute inset-0 rounded-xl bg-neutral-200 dark:bg-neutral-800 -z-10 block"
+                    layoutId="hovered-span"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "linear",
+                    }}
+                  />
+                )}
+              </AnimatePresence>
 
-              <div className="">
-                <h2 className="text-neutral-600 dark:text-neutral-300 py-3 sm:py-5">
-                  {project.title}
-                </h2>
+              <div className="relative z-10">
+                <div className="w-full">
+                  <img
+                    src={project.src.src}
+                    alt={project.title}
+                    className="w-full sm:w-auto object-cover h-50 sm:h-36 rounded-xl"
+                    width={500}
+                    height={300}
+                  />
+                </div>
 
-                <p className="text-gray-500 dark:text-neutral-400 text-sm w-full sm:w-55">
-                  {project.description}
-                </p>
+                <div className="">
+                  <h2 className="text-neutral-600 dark:text-neutral-300 py-3 sm:py-5 font-semibold">
+                    {project.title}
+                  </h2>
 
-                <div className="h-4 flex items-center gap-4 mt-4 -space-x-6">
-                  {project.techStack.map((Icon, index) => (
-                    <motion.div
-                      layout
-                      initial={{
-                        width: 24,
-                      }}
-                      whileHover={{
-                        width: "auto",
-                      }}
-                      transition={{
-                        ease: "easeInOut",
-                        duration: 0.3,
-                      }}
-                      className="group flex items-center h-6 w-6 border border-neutral-300 dark:border-neutral-700 overflow-hidden bg-neutral-100 dark:bg-neutral-800 z-10 hover:z-50 px-1 rounded-full cursor-pointer"
-                      key={index}
-                    >
-                      <div className="size-3.75 shrink-0 text-neutral-900 dark:text-neutral-100 fill-current">
-                        <Icon.icon />
-                      </div>
-                      <p className="text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 ml-2 transition-all duration-300 text-neutral-700 dark:text-neutral-300 font-medium">
-                        {Icon.name}
-                      </p>
-                    </motion.div>
-                  ))}
+                  <p className="text-gray-500 dark:text-neutral-400 text-sm w-full sm:w-55">
+                    {project.description}
+                  </p>
+
+                  <div className="flex justify-between items-center mt-4">
+                    <div className="h-4 flex items-center gap-4 -space-x-6">
+                      {project.techStack.map((Icon, index) => (
+                        <motion.div
+                          layout
+                          initial={{
+                            width: 24,
+                          }}
+                          whileHover={{
+                            width: "auto",
+                          }}
+                          transition={{
+                            ease: "easeInOut",
+                            duration: 0.3,
+                          }}
+                          className="group flex items-center h-6 w-6 border border-neutral-300 dark:border-neutral-700 overflow-hidden bg-neutral-100 dark:bg-neutral-800 z-10 hover:z-50 px-1 rounded-full cursor-pointer"
+                          key={index}
+                        >
+                          <div className="size-3.75 shrink-0 text-neutral-900 dark:text-neutral-100 fill-current">
+                            <Icon.icon />
+                          </div>
+                          <p className="text-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 ml-2 transition-all duration-300 text-neutral-700 dark:text-neutral-300 font-medium">
+                            {Icon.name}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {project.githubLink && (
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.open(project.githubLink, "_blank");
+                        }}
+                        className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white z-20 cursor-pointer"
+                        title="View GitHub Repository"
+                        aria-label="View GitHub Repository"
+                      >
+                        <HugeiconsIcon icon={GithubIcon} size={16} />
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </div>
