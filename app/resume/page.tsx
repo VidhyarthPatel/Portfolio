@@ -48,7 +48,7 @@ export default function ResumePage() {
               variants={item}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/new_resume.pdf"
+              href="/New_Resume.pdf"
               download="Vidhyarth_Resume.pdf"
               className="bg-neutral-900 dark:bg-neutral-800 text-white dark:text-neutral-200 text-sm font-medium px-6 py-2.5 rounded-lg border border-neutral-700 hover:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors shadow-sm cursor-pointer flex items-center gap-2 whitespace-nowrap"
             >
@@ -62,7 +62,7 @@ export default function ResumePage() {
             className="w-full h-[70vh] sm:h-[80vh] rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-sm bg-neutral-100 dark:bg-neutral-800"
           >
             <iframe 
-              src="/new_resume.pdf#toolbar=0&navpanes=0&scrollbar=0" 
+              src="/New_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0" 
               className="w-full h-full border-none"
               title="Resume Preview"
             />

@@ -172,7 +172,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#FAFAFA] dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+      <body 
+        className="min-h-full flex flex-col bg-[#FAFAFA] dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100"
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           <ScrollToTop />
           <Container className="sticky top-0 z-50 border-x border-b border-neutral-200 dark:border-neutral-800 px-5 bg-[#FAFAFA]/80 dark:bg-neutral-900/80 backdrop-blur-md">
