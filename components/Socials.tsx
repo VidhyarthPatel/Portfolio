@@ -24,19 +24,19 @@ function Socials() {
     {
       name: "X",
       value: "X",
-      href: "https://x.com",
+      href: "https://x.com/Vidhyarthhhh",
       icon: <HugeiconsIcon icon={NewTwitterIcon} size={18} />,
     },
     {
       name: "Instagram",
       value: "Instagram",
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/vidhyarth_patel/",
       icon: <HugeiconsIcon icon={InstagramIcon} size={18} />,
     },
     {
       name: "LinkedIn",
       value: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/vidhyarth-patel/",
       icon: <HugeiconsIcon icon={Linkedin} size={18} />,
     },
   ];
@@ -80,7 +80,12 @@ function Socials() {
     <motion.a
       variants={{
         hidden: { filter: "blur(10px)", x: -10, opacity: 0 },
-        show: { filter: "blur(0px)", x: 0, opacity: 1, transition: { duration: 0.3 } },
+        show: {
+          filter: "blur(0px)",
+          x: 0,
+          opacity: 1,
+          transition: { duration: 0.3 },
+        },
       }}
       key={index}
       href={item.href}
@@ -102,7 +107,7 @@ function Socials() {
   );
 
   return (
-    <motion.div 
+    <motion.div
       className="grid grid-cols-2 p-4 sm:p-5 backdrop-blur-xs gap-0"
       initial="hidden"
       whileInView="show"

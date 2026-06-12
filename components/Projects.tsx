@@ -4,7 +4,9 @@ import Container from "./container";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import BananaTypingImg from "@/public/BananaTyping.png";
+import PureMystImg from "@/public/PureMystImg.png";
 import TechDefendersImg from "@/public/TechDefender'sLanding page.png";
+import MonkImg from "@/public/MonkImg.png";
 import { GithubIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 
@@ -38,8 +40,8 @@ function Projects() {
       description:
         "Typing test website built with React, framer motion, and Tailwind CSS",
       src: BananaTypingImg,
-      demoLink: "#",
-      githubLink: "#",
+      demoLink: "https://banana-typing.vercel.app/",
+      githubLink: "https://github.com/VidhyarthPatel/bananaTyping",
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },
@@ -47,12 +49,12 @@ function Projects() {
       ],
     },
     {
-      title: "Instant Feedback",
+      title: "Monk Agency Landing Page",
       description:
         "An interactive feedback system that provides instant responses to user actions",
-      src: TechDefendersImg,
-      demoLink: "#",
-      githubLink: "#",
+      src: MonkImg,
+      demoLink: "https://monk-agency.vercel.app/",
+      githubLink: "https://github.com/VidhyarthPatel/MONK",
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },
@@ -60,12 +62,11 @@ function Projects() {
       ],
     },
     {
-      title: "Macbook Mockup",
+      title: "Puremyst",
       description:
-        "A clone of Apple's website that showcases their products and services",
-      src: TechDefendersImg,
-      demoLink: "#",
-      githubLink: "#",
+        "Full Stack ecommerce website built with Next.js, Tailwind CSS, with Backend ",
+      src: PureMystImg,
+      demoLink: "https://puremyst.in",
       techStack: [
         { icon: ReactIcon, name: "React" },
         { icon: NextIcon, name: "Next.js" },

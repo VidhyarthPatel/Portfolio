@@ -6,6 +6,7 @@ import {
   InstagramIcon,
   Linkedin,
   NewTwitterIcon,
+  GithubIcon,
 } from "@hugeicons/core-free-icons";
 
 export default function Footer() {
@@ -30,7 +31,16 @@ export default function Footer() {
 
       <div className="flex items-center gap-5">
         <a
-          href="https://twitter.com/VidhyarthPatel"
+          href="https://github.com/VidhyarthPatel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-neutral-900 dark:hover:text-white transition-colors"
+          aria-label="GitHub"
+        >
+          <HugeiconsIcon icon={GithubIcon} size={20} />
+        </a>
+        <a
+          href="https://x.com/Vidhyarthhhh"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-neutral-900 dark:hover:text-white transition-colors"
@@ -39,7 +49,7 @@ export default function Footer() {
           <HugeiconsIcon icon={NewTwitterIcon} size={20} />
         </a>
         <a
-          href="https://linkedin.com/in/VidhyarthPatel"
+          href="https://www.linkedin.com/in/vidhyarth-patel"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-neutral-900 dark:hover:text-white transition-colors"
@@ -48,7 +58,7 @@ export default function Footer() {
           <HugeiconsIcon icon={Linkedin} size={20} />
         </a>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/vidhyarth_patel"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-neutral-900 dark:hover:text-white transition-colors"
