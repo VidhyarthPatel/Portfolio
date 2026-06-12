@@ -12,7 +12,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://vidhyarth.me";
+const siteUrl = "https://www.vidhyarth.me";
 
 export const metadata: Metadata = {
   title:
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
       "Freelance Full Stack Developer available for hire. I build modern web apps with React, Next.js, Node.js, Express.js, MongoDB & PostgreSQL. Check out my portfolio and let's work together.",
     images: [
       {
-        url: "/og-image.png",
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Vidhyarth Patel – Freelance Full Stack Developer",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     title: "Vidhyarth Patel | Freelance Full Stack Developer",
     description:
       "Freelance Full Stack Developer specializing in React, Next.js, Node.js, Express.js, MongoDB & PostgreSQL. Available for hire.",
-    images: ["/og-image.png"],
+    images: [`${siteUrl}/og-image.png`],
     creator: "@vidhyarth",
   },
   category: "technology",
