@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -184,6 +185,7 @@ export default function RootLayout({
           </Container>
           {children}
           <GoogleAnalytics gaId="G-L5KBP2390X" />
+          <Analytics />
           <Container className="border-x border-b border-t border-neutral-200 dark:border-neutral-800">
             <Footer />
           </Container>
