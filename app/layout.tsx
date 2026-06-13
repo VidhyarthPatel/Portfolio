@@ -183,7 +183,7 @@ export default function RootLayout({
             <Navbar />
           </Container>
           {children}
-          <GoogleAnalytics gaId="G-5JGHEY6XR1" />
+          <GoogleAnalytics gaId="G-L5KBP2390X" />
           <Container className="border-x border-b border-t border-neutral-200 dark:border-neutral-800">
             <Footer />
           </Container>
