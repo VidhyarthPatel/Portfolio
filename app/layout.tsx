@@ -6,6 +6,7 @@ import Container from "@/components/container";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -172,7 +173,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body 
+      <body
         className="min-h-full flex flex-col bg-[#FAFAFA] dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100"
         suppressHydrationWarning
       >
@@ -182,6 +183,7 @@ export default function RootLayout({
             <Navbar />
           </Container>
           {children}
+          <GoogleAnalytics gaId="G-5JGHEY6XR1" />
           <Container className="border-x border-b border-t border-neutral-200 dark:border-neutral-800">
             <Footer />
           </Container>
