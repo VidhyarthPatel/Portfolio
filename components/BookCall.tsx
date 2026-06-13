@@ -2,8 +2,16 @@
 
 import React from "react";
 import { motion } from "motion/react";
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 export default function BookCall() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "vidhyarth" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
   const container = {
     hidden: {},
     visible: {
@@ -49,11 +57,15 @@ export default function BookCall() {
           </motion.p>
 
           <motion.button
+            data-cal-namespace="vidhyarth"
+            data-cal-link="vidhyarth-patel/vidhyarth"
+            data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
             variants={item}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-neutral-900 dark:bg-neutral-800 text-white dark:text-neutral-200 text-sm font-medium px-6 py-2.5 rounded-lg border border-neutral-700 hover:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors shadow-sm cursor-pointer whitespace-nowrap"
           >
+            {" "}
             Book a Call
           </motion.button>
         </div>
