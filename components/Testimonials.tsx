@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { useAnimate } from "motion/react";
+import Image from "next/image";
 
 interface Testimonial {
   text: string;
@@ -108,9 +109,12 @@ function Testimonials() {
         {item.text}
       </p>
       <div className="flex items-center gap-3">
-        <img
+        <Image
           src={item.avatar}
           alt={item.name}
+          width={40}
+          height={40}
+          unoptimized
           className="w-10 h-10 rounded-full object-cover shrink-0 border border-neutral-100 dark:border-neutral-800"
           referrerPolicy="no-referrer"
         />

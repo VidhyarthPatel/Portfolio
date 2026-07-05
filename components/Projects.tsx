@@ -3,6 +3,7 @@
 import Container from "./container";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import Image from "next/image";
 import BananaTypingImg from "@/public/BananaTyping.png";
 import PureMystImg from "@/public/PureMystImg.png";
 import TechDefendersImg from "@/public/TechDefender'sLanding page.png";
@@ -167,12 +168,13 @@ function Projects() {
 
               <div className="relative z-10">
                 <div className="w-full">
-                  <img
-                    src={project.src.src}
+                  <Image
+                    src={project.src}
                     alt={project.title}
                     className="w-full sm:w-auto object-cover h-50 sm:h-36 rounded-xl"
                     width={500}
                     height={300}
+                    placeholder="blur"
                   />
                 </div>
 

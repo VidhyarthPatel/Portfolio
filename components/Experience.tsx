@@ -204,7 +204,6 @@ export default function Experience() {
                 width={exp.logoWidth}
                 height={exp.logoHeight}
                 className="object-contain"
-                priority
               />
             </div>
           </motion.div>

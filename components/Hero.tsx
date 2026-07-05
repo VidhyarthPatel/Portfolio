@@ -138,6 +138,8 @@ function Hero() {
         <video
           ref={videoRef}
           src="/profileVideo.mp4"
+          poster="/profileImg.png"
+          preload="none"
           className="rounded-full border-white dark:border-neutral-800 border-5 w-24 h-24 sm:w-35 sm:h-35 object-cover shadow-2xl cursor-pointer overflow-hidden"
           muted
           playsInline
