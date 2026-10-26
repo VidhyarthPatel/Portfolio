@@ -10,6 +10,22 @@ export const metadata: Metadata = {
 
 const blogs = [
   {
+    slug: "express-and-middleware-explained",
+    title: "Express.js and Middleware: The High-Level Architecture",
+    description:
+      "A clean, high-level architectural overview of Express.js — routing, the request-response pipeline, the 5 types of middleware, and essential execution rules.",
+    date: "Oct 26, 2026",
+    readTime: "6 min read",
+  },
+  {
+    slug: "nodejs-architecture-explained",
+    title: "Demystifying Node.js Architecture: How Single-Threaded JavaScript Scales to Millions",
+    description:
+      "Deep dive into how Node.js actually works under the hood — from the V8 engine and libuv to the 6 Event Loop phases, worker threadpool, and non-blocking asynchronous I/O.",
+    date: "Oct 26, 2026",
+    readTime: "12 min read",
+  },
+  {
     slug: "the-developers-canvas",
     title: "The Developer's Canvas: Why Design Sense Is Your Next Level-Up",
     description:

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import QuantamiseLogoImge from "@/public/QuantamiselogoImg.webp";
+import ConvergeLogoImg from "@/public/convergedigitalsLogo.png";
 
 import {
   SiReact,
@@ -12,6 +13,7 @@ import {
   SiMongodb,
   SiPostgresql,
   SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 
 const MotionIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -34,14 +36,33 @@ interface ExperienceItem {
   logo: string | any;
   logoWidth: number;
   logoHeight: number;
+  logoClassName?: string;
   tech: TechItem[];
 }
 
 const experiences: ExperienceItem[] = [
   {
+    company: "Converge Digitals",
+    role: "Frontend Developer",
+    period: "Aug 2026 - Present",
+    description:
+      "Developing high-performance web applications and modern user interfaces with Next.js, React, and TypeScript. Collaborating with cross-functional teams to build scalable, responsive, and visually engaging digital experiences.",
+    logo: ConvergeLogoImg,
+    logoWidth: 50,
+    logoHeight: 50,
+    logoClassName: "rounded-xl border border-neutral-200 dark:border-neutral-800",
+    tech: [
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "#61DAFB" },
+      { name: "Motion", icon: MotionIcon, color: "#0055FF" },
+    ],
+  },
+  {
     company: "QuantamiseCode",
     role: "Software Developer Intern",
-    period: "January 2026 - Present",
+    period: "Jan 2026 - Jul 2026",
     description:
       "Building modern web applications using React, Next.js, and TypeScript while collaborating with the development team to deliver production-ready features.",
     logo: QuantamiseLogoImge,
@@ -203,7 +224,7 @@ export default function Experience() {
                 alt={`${exp.company} logo`}
                 width={exp.logoWidth}
                 height={exp.logoHeight}
-                className="object-contain"
+                className={`object-contain ${exp.logoClassName || ""}`}
               />
             </div>
           </motion.div>
