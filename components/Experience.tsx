@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { motion } from "motion/react";
 import QuantamiseLogoImge from "@/public/QuantamiselogoImg.webp";
 import ConvergeLogoImg from "@/public/convergedigitalsLogo.png";
@@ -33,7 +33,7 @@ interface ExperienceItem {
   role: string;
   period: string;
   description: string;
-  logo: string | any;
+  logo: string | StaticImageData;
   logoWidth: number;
   logoHeight: number;
   logoClassName?: string;

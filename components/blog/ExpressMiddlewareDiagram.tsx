@@ -7,7 +7,7 @@ interface PipelineStep {
   name: string;
   type: string;
   badge: string;
-  color: string;
+  color?: string;
   description: string;
   codeSnippet: string;
   reqMutation: string;
@@ -53,6 +53,7 @@ app.use(morgan("dev"));
     name: "3. Custom Auth & Guard Middleware",
     type: "Auth Guard",
     badge: "Custom Auth",
+    color: "emerald",
     description:
       "Inspects request headers for a Bearer JWT token, validates the signature, and enriches the request by attaching the authenticated user payload to req.user.",
     codeSnippet: `// 3. Custom authentication middleware
